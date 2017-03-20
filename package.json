@@ -1,0 +1,47 @@
+{
+  "name": "rolld20",
+  "version": "1.0.0",
+  "description": "A dice rolling CLI",
+  "main": "./build/lib.js",
+  "scripts": {
+    "release:init": "standard-version --first-release",
+    "release": "standard-version",
+    "prepublish": "npm run build",
+    "build": "webpack",
+    "watch:build": "webpack --watch",
+    "prebuild:rollup": "rimraf build && mkdri build",
+    "build:rollup": "rollup --config",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antjanus/rollD20.git"
+  },
+  "author": "Antonin Januska <antonin@antjanus.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/antjanus/rollD20/issues"
+  },
+  "homepage": "https://github.com/antjanus/rollD20#readme",
+  "devDependencies": {
+    "babel-core": "6.24.0",
+    "babel-jest": "19.0.0",
+    "babel-loader": "6.4.1",
+    "babel-preset-env": "1.2.2",
+    "jest": "19.0.2",
+    "rimraf": "2.6.1",
+    "rollup-plugin-babel": "2.7.1",
+    "standard-version": "4.0.0",
+    "webpack": "2.2.1"
+  },
+  "jest": {
+    "bail": true,
+    "collectCoverage": true,
+    "verbose": true
+  },
+  "dependencies": {
+    "chalk": "1.1.3",
+    "minimist": "1.2.0"
+  }
+}
